@@ -11,7 +11,7 @@ class ChatData(Dataset):
             for i in doc :
                 data = f"<startofstring> {i['q']} <AI>: {i['a']} <endofstring>"
                 self.X.append(data)
-
+        print(len(self.X))
         
         self.X_encoded = tokenizer(self.X,max_length=40, truncation=True, padding="max_length", return_tensors="pt")
         self.input_ids = self.X_encoded['input_ids']
