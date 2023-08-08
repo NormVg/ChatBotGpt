@@ -56,6 +56,10 @@ optim = Adam(model.parameters(), lr=1e-3)
 print("training .... ")
 train(chatData, model, optim)
 
+# USE THIS TO SAVE THE MODAL AND RUN THE MODAL USING test.py
+#model.save_pretrained("path/to/saved_model")
+#tokenizer.save_pretrained("path/to/saved_model")
+
 print("infer from model : ")
 while True:
   inp = input()
